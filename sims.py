@@ -10,6 +10,17 @@ class Human:
         self.gladness = 50
         self.satiety = 50
 
+
+class Cat:
+    def __init__(self, name="Cat", breed="Cur"):
+        self.name = name
+        self.breed = breed
+        self.hunger = 50
+        self.thirst = 50
+        self.energy = 100  # Это для того, чтобы просто обозначить, выспался ли кот или нет.
+        self.playfullness = 50
+        self.loneliness = 35
+
     def get_home(self):
         pass
 

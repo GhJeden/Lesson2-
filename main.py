@@ -7,6 +7,13 @@ class Student:
         self.gladness = 50
         self.progress = 0
         self.alive = True
+        self.money = 1000
+
+    def to_work(self):
+        print("time to work")
+        self.money += 300
+        self.gladness += 2
+        self.progress += 0
 
     def to_study(self):
         print("time to study")
@@ -48,6 +55,14 @@ class Student:
             self.to_chill()
         self.end_of_day()
         self.is_alive()
+
+    def money(self, money):
+        if self.money == 0:
+            print("You bankrupt...")
+            self.alive = False
+        elif self.money < 10:
+            print("time to go to work")
+            self.to_work()
 
 
 nick = Student("Nick")
