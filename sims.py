@@ -80,20 +80,49 @@ class Human:
             self.satiety += 2
 
     def chill(self):
-        pass
+        if self.gladness < 20:
+            print("Time to have some chill moment!")
+            self.chill()
+            self.gladness += 40
+            self.thirst += 10
+            self.satiety += 15
+            self.mess += 25
 
     def clean_home(self):
-        pass
+        if self.mess > 0:
+            manage = "cleaning"
+        else:
+            self.mess()
+            return
+        if manage == 'cleaning':
+            print("I`ll clean this house!!")
+            self.mess -= 30
+            self.thirst += 10
+            self.satiety += 10
+            self.gladness += 5
 
     def to_repair(self):
-        pass
+        if self.strength < 10:
+            print("I should repair my car!")
+            self.to_repair()
+            self.strength += 40
+            self.money -= 100
+            self.gladness += 20
 
     def days_indexes(self, day):
         d = f"Today the {day} of {self.name}`s indexes"
         print(f"{d:=^50}")
         human_i = f"{self.name}`s indexes"
         print(f"{human_i:=^50}")
-        print(f"{'Home indexes':=^50}")
+        print(f"Gladness: {self.gladness}")
+        print(f"Money: {self.money}")
+        print(f"Satiety: {self.satiety}")
+        print(f"Thirst: {self.thirst}")
+        house_i = f"{self.house} indexes"
+        print(f"{house_i:=^50}")
+        print(f"Mess: {self.house.mess}")
+        print(f"Water: {self.house.water}")
+        print(f"Food: {self.house.food}")
         car_i = f"{self.car.brand} car indexes"
         print(f"{car_i:=^50}")
         print(f"Fuel: {self.car.fuel}")
