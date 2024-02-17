@@ -1,12 +1,13 @@
 from random import choice
 
+
 class Randomizer:
     def __init__(self, a, b):
         self.__a = a
         self.__b = b
 
     def __get_result(self):
-        temp =["+", "-", "*"]
+        temp = ["+", "-", "*"]
         oper = choice(temp)
         if oper == "+":
             return self.__a + self.__b
